@@ -1,3 +1,5 @@
+> This is an example project created by [Daniel Ramos Acosta](https://github.com/DanielRamosAcosta) & [Adrián Ferrera González](https://github.com/adrian-afergon) for test react-hooks with Typescript.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
