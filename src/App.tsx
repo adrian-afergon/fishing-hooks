@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FishingContainer } from './components/FishingList/FishingListContainer';
+import { FishingContainer } from './containers/FishingListContainer';
 
 class App extends Component {
   render() {

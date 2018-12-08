@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Fisherman, Bait } from './domain';
-import { FishingList } from './FishingList'
+import { FishingList } from '../components/FishingList/FishingList';
+import { Bait } from '../domain/Bait';
+import { Fisherman } from "../domain/Fisherman";
 
 const adrianFisherman = new Fisherman()
 
