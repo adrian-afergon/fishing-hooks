@@ -1,7 +1,11 @@
 import { Bait } from "./Bait";
 
 export class Fisherman {
-  constructor(public baitBasket: Bait[] = []) {
+  constructor(private baitBasket: Bait[] = []) {
+  }
+
+  getBaitBasket () {
+    return this.baitBasket
   }
 
   addToBaitBasket(bait: Bait) {

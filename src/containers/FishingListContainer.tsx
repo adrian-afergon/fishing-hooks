@@ -1,24 +1,10 @@
 import * as React from 'react';
 import { FishingList } from '../components/FishingList/FishingList';
-import { Bait } from '../domain/Bait';
-import { Fisherman } from "../domain/Fisherman";
+import { createFishermanHook } from '../hooks/createFishermanHook';
 
-let adrianFisherman = new Fisherman()
+interface FishingListContainerProps {}
 
-interface FishingListContainerProps {
-
-}
-
-function useFisherman(): [Bait[], (currentBait: string) => any] {
-  const [ baits, setBaits ] = React.useState([] as Bait[])
-
-  const handleAddToBaitBasket = (currentBait: string) => {
-    adrianFisherman = adrianFisherman.addToBaitBasket(new Bait(currentBait))
-    setBaits(adrianFisherman.baitBasket)
-  }
-
-  return [baits, handleAddToBaitBasket];
-}
+const useFisherman = createFishermanHook()
 
 export const FishingContainer: React.SFC<FishingListContainerProps> = () => {
   const [baits, handleAddToBaitBasket] = useFisherman()
