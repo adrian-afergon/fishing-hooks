@@ -13,7 +13,7 @@ export const InputWithButton: React.SFC<InputWithButtonProps> = props => {
       props.onSubmit(currentText)
     }}>
       <input name="baits" onChange={(e) => {setCurrentText(e.target.value)}} />
-      <input type="submit">Add to list</input>
+      <input type="submit" value="Add to list" />
     </form>
   )
 }
