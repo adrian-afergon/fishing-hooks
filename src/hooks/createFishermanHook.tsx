@@ -5,16 +5,17 @@ import { Fisherman } from "../domain/Fisherman";
 type SetBait = React.Dispatch<React.SetStateAction<Bait[]>>
 
 export function createFishermanHook() {
-  let adrianFisherman = new Fisherman();
-
-  const handleAddToBaitBasket = (setBaits: SetBait) => (currentBait: string) => {
-    adrianFisherman = adrianFisherman.addToBaitBasket(new Bait(currentBait));
-    setBaits(adrianFisherman.getBaitBasket());
+  const handleAddToBaitBasket = (baits: Bait[], setBaits: SetBait) => (currentBait: string) => {
+    setBaits(
+      new Fisherman(baits)
+        .addToBaitBasket(new Bait(currentBait))
+        .getBaitBasket()
+    )
   }
 
   function useFisherman(): [Bait[], (currentBait: string) => any] {
     const [baits, setBaits] = React.useState([] as Bait[]);
-    return [baits, handleAddToBaitBasket(setBaits)];
+    return [baits, handleAddToBaitBasket(baits, setBaits)];
   }
   return useFisherman;
 }
