@@ -1,7 +1,12 @@
 import { Bait } from "./Bait";
+import { Fish } from "./Fish";
 
 export class Fisherman {
-  constructor(private baitBasket: Bait[] = []) {
+  constructor(private baitBasket: Bait[] = [], private fishCollection: Fish[] = []) {
+  }
+
+  hasBaits () {
+    return !this.baitBasket.length
   }
 
   getBaitBasket () {
@@ -9,6 +14,10 @@ export class Fisherman {
   }
 
   addToBaitBasket(bait: Bait) {
-    return new Fisherman([...this.baitBasket, bait]);
+    return new Fisherman([...this.baitBasket, bait], this.fishCollection);
+  }
+
+  fish(aFish: Fish) {
+    return new Fisherman(this.baitBasket, [...this.fishCollection, aFish]);
   }
 }
