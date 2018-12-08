@@ -11,13 +11,10 @@ export class Bait {
 }
 
 export class Fisherman {
-  public baitBasket: Bait[];
-
-  constructor() {
-    this.baitBasket = []
+  constructor(public baitBasket: Bait[] = []) {
   }
 
   addToBaitBasket (bait: Bait) {
-    this.baitBasket.push(bait);
+    return new Fisherman([...this.baitBasket, bait])
   }
 }
